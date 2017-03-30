@@ -21,6 +21,8 @@ public class SecondActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        int taskId = getTaskId();
+        Log.i("wjh", "SecondActivity" +"所在的任务的id为: " +  taskId);
     }
 
     @Override

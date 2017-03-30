@@ -14,6 +14,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.i("wjh", "MainActivity.onCreate");
+
+        if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
+            finish();
+            return;
+        }
         new Thread(){
             @Override
             public void run() {
@@ -31,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }.start();
+
+        int taskId = getTaskId();
+        Log.i("wjh", "MainActivity" +"所在的任务的id为: " +  taskId);
     }
 
     @Override

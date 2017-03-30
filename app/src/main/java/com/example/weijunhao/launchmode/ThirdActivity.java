@@ -22,6 +22,9 @@ public class ThirdActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        int taskId = getTaskId();
+        Log.i("wjh", "ThirdActivity" +"所在的任务的id为: " +  taskId);
     }
 
     @Override
